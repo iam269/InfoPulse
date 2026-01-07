@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Știri.ro</h3>
+            <h3 className="text-xl font-bold mb-4">InfoPluse</h3>
             <p className="text-sm text-primary-foreground/80">
               Informații de încredere, la zi, pentru tine.
             </p>
@@ -27,10 +28,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Despre</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li><a href="#echipa" className="hover:text-accent transition-colors">Echipa noastră</a></li>
-              <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
-              <li><a href="#cariere" className="hover:text-accent transition-colors">Cariere</a></li>
-              <li><a href="#termeni" className="hover:text-accent transition-colors">Termeni și condiții</a></li>
+              <li><Link to="/developer" className="hover:text-accent transition-colors">Dezvoltator</Link></li>
+              <li><a href="#contact" className="hover:text-accent transition-colors">Cod Sursă</a></li>
+              <li><Link to="/terms" className="hover:text-accent transition-colors">Termeni și condiții</Link></li>
             </ul>
           </div>
           
@@ -54,7 +54,7 @@ export const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/80">
-          <p>&copy; {currentYear} Știri.ro. Toate drepturile rezervate.</p>
+          <p>&copy; {currentYear} InfoPulse. Toate drepturile rezervate.</p>
         </div>
       </div>
     </footer>
