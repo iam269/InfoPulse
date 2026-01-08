@@ -8,6 +8,7 @@ import Article from "./pages/Article";
 import Terms from "./pages/Terms";
 import Developer from "./pages/Developer";
 import NotFound from "./pages/NotFound";
+import { PrivacyConsent } from "./components/PrivacyConsent";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PrivacyConsent />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

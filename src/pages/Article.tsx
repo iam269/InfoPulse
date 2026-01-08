@@ -48,14 +48,16 @@ const Article = () => {
 
         <div className="prose prose-lg max-w-none">
           <p>{article.content}</p>
-          <a
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 px-4 py-2 bg-accent text-accent-foreground rounded-md hover:bg-accent/90 transition-colors"
-          >
-            Citește articolul complet
-          </a>
+          <div className="text-center">
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-300 transition-colors"
+            >
+              Citește articolul complet
+            </a>
+          </div>
         </div>
       </article>
     </div>
