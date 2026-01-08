@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 
 const API_KEY = '935cecfe80e14bdcb5d1c000dad47acb';
-const BASE_URL = 'https://newsapi.org/v2';
+const BASE_URL = '/api/v2';
 
 interface NewsArticle {
   source: { id: string | null; name: string };
