@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 
-const API_KEY = '935cecfe80e14bdcb5d1c000dad47acb';
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = '/api/v2';
 
 interface NewsArticle {
@@ -46,7 +46,7 @@ const fetchNews = async (category: string): Promise<Article[]> => {
 
   const response = await fetch(`${BASE_URL}/top-headlines?country=us&category=${apiCategory}&apiKey=${API_KEY}`);
   if (!response.ok) {
-    throw new Error('Failed to fetch news');
+    return []; // Return empty array instead of throwing to avoid error display
   }
   const data: NewsResponse = await response.json();
 

@@ -37,6 +37,7 @@ export const ArticleCard = ({
         <img
           src={imageUrl}
           alt={title}
+          loading="lazy"
           className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
             featured ? 'h-[400px]' : 'h-[250px]'
           }`}

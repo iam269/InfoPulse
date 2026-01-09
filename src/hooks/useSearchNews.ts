@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 
-const API_KEY = '935cecfe80e14bdcb5d1c000dad47acb';
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = '/api/v2';
 
 interface NewsArticle {
@@ -37,7 +37,8 @@ const searchNews = async (query: string): Promise<Article[]> => {
 
   const response = await fetch(`${BASE_URL}/everything?q=${encodeURIComponent(query)}&apiKey=${API_KEY}&language=en&pageSize=20`);
   if (!response.ok) {
-    throw new Error('Failed to search news');
+    console.error('Search fetch error:', await response.text());
+    return []; // Return empty array instead of throwing
   }
   const data: NewsResponse = await response.json();
 
