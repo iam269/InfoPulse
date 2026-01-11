@@ -50,7 +50,7 @@ const fetchNews = async (category: string): Promise<Article[]> => {
   }
   const data: NewsResponse = await response.json();
 
-  return data.articles.slice(0, 3).map(article => ({
+  return data.articles.slice(0, 6).map(article => ({
     category,
     title: article.title,
     excerpt: article.description || 'No description available',
@@ -66,7 +66,6 @@ export const useNews = (category: string) => {
   return useQuery({
     queryKey: ['news', category],
     queryFn: () => fetchNews(category),
-    refetchInterval: 5 * 60 * 1000, // 5 minutes
-    staleTime: 4 * 60 * 1000, // 4 minutes
+    refetchInterval: 15 * 60 * 1000, // 15 minutes
   });
 };
