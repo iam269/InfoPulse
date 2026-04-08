@@ -16,7 +16,7 @@ InfoPulse is a modern, responsive news aggregator web application built with Rea
 
 ## Live Demo 🚀
 
-Check out the live application at: [https://iam269.github.io/InfoPulse/](https://iam269.github.io/InfoPulse/)
+Check out the live application at: [https://itsiamdev.github.io/InfoPulse/](https://itsiamdev.github.io/InfoPulse/)
 
 ## Project Structure 📁
 
